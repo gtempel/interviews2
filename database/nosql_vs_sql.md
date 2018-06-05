@@ -37,9 +37,6 @@ it is used in case of relationships-intensive problems.
 ### Document stores
 it is used for storing hierarchical data structures directly in the database.
 
---- 
-## Q: what is eventual consistency, and how does that apply to nosql dbs? systems?
-
 
 --- 
 ## Q:  What are the pros and cons of a graph database under NoSQL databases?
