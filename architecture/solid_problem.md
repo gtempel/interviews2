@@ -1,5 +1,7 @@
 # SOLID problem and closed-code
 
+Given the following code snippet:
+
 ```
       public void Work(string switchoption)
         {
@@ -45,8 +47,7 @@ Each `case` should be refactored to a separate method. It's still not *closed*, 
 That will close the function, but still doesn't follow *Single Responsibility* part of SOLID since `work()` is still doing several things
 
 ---
-## Q: How could you improve this and future-proof it and
-yet still have it be testable and work?
+## Q: How could you improve this and future-proof it and yet still have it be testable and work?
 ## A: Implement a [strategy pattern](http://www.dofactory.com/net/strategy-design-pattern) and dependency injection
 The method wouldn't then care _what_ work has to be performed, just that it could do it.
 
