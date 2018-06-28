@@ -10,12 +10,13 @@ Given the following code snippet:
                 case "Fun1":
                     ///
                     /// So many lines of code
-                    ///
+                    /// 
                     break;
                 case "Fun2":
                     ///
-                    /// So many lines of code
-                    ///
+                    /// So many lines of code.
+                    /// Allocates some new objects
+                    /// to do some labor, etc.
                     break;
                 case "Fun3":
                     ///

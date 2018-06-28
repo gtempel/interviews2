@@ -13,7 +13,7 @@ Get a view onto/into the complexity, maintainability,and possibly performance of
 ## A: 
 assignments, branches, conditionals
 
-Can actually be represented as a 3d-vecor, magnitude: | abc | = sqrt(a^2 + b^2 + c^2)
+Can actually be represented as a 3d-vector, magnitude: | abc | = sqrt(a^2 + b^2 + c^2)
 
 ---
 
