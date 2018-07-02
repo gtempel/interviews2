@@ -39,6 +39,27 @@ Other patterns that should apply:
 * KISS -- keep it simple stupid
 
 ---
+## Q: What Does Tdd Give Us That We Can’t Get By Building Tests “after The Fact”?
+## A: 5 main things...
+(https://www.wisdomjobs.com/e-university/test-driven-development-tdd-interview-questions.html)
+
+1. To make sure the tests get done – It is very easy to forget important business rules when building tests after the code has been written. TDD helps to guarantee that all of the important features have valid tests written for them.
+2. To help define the problem before solving it – Stopping before building and defining the problem in terms of a test is very helpful for gaining insight into the problem. Often, I have eliminated what would have likely been some significant rework by building my tests first.
+3. To force “design for testability” – One of the worst things about writing tests is having to go back and change working code because it isn’t testable. By doing the tests up-front, we guarantee that our code is testable before we even write it. In addition, since testable code is generally decoupled code, TDD helps to enforce a good standard that also helps reduce TCO.
+4. To help validate your tests – When you follow the results of tests through from throwing a NotImplementedException to returning invalid results, to returning correct results, you have the most confidence that your test is doing what it is supposed to do.
+5. To help prevent scope creep – It is often easy to creep the scope of a development effort by including features that are not currently required, because they seem easy when doing the development. If, however, you require yourself to build tests for each feature first, you are more likely to reconsider adding features that are not currently necessary.
+
+---
+## Q: common pitfalls of TDD/unit testing?
+## A: several...
+(https://www.wisdomjobs.com/e-university/test-driven-development-tdd-interview-questions.html)
+
+1. brittle tests -- tests fail when non-functional changes are made due to tests being too specific/micro-managing
+2. missed features -- features may evolve independently, annd while it's a good goal to DRY up your tests, features evolve independently and a shared test might drift one way or another
+3. datetimes don't validate well -- be tolerant, or mock/stub the times so they're always known
+4. testing with shared resources is tough -- this may be a smell where something isn't designed for testability
+5. 
+---
 ## Q: Bowling Kata
 http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
 
