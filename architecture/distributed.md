@@ -47,3 +47,26 @@ This is a specific form of weak consistency; the storage system guarantees that 
 This is an important model where process A, after it has updated a data item, always accesses the updated value and will never see an older value. This is a special case of the causal consistency model.
 * (eventual) Session consistency  
 This is a practical version of the previous model, where a process accesses the storage system in the context of a session. As long as the session exists, the system guarantees read-your-writes consistency. If the session terminates because of a certain failure scenario, a new session needs to be created and the guarantees do not overlap the sessions.
+
+---
+
+## Q: Tell me about the fallacies (false assumptions) of Distributed Systems?
+## A:
+https://dzone.com/articles/understanding-the-8-fallacies-of-distributed-syste
+
+1. the network is reliable  
+Calls over a network _will_ fail (http timeouts, sockets close, [shark attacks](https://www.theguardian.com/technology/2014/aug/14/google-undersea-fibre-optic-cables-shark-attacks), so you need to be prepared for automatic retries (queues are great for this).
+2. latency is zero  
+Calls over a network are _not_ instantaneous, and are **seven-orders of magnitude** slower than in-memory calls, and beware the [n+1 select problem](https://stackoverflow.com/questions/97197/what-is-the-n1-select-query-issue) which creates more round-trips than you might expect. Be prepared to bring back all the data you might need, and move the data closer to the clients. Additionally, consider inverting the flow of data and removing the remote calls that query for data and replace with pub/sub calls that are pushing data.
+3. bandwidth is infinite  
+Often this _isn't_ a problem, but be careful about what kind of data you are streaming. Video? VoIP? Dataset replication? Even database calls being handled by an ORM -- queryResults.toList() could inhale the entire result set into memory for the sake of creating the list/array. You may need to partition your data/domain into contexts, start to work with aggregates, or tackle the access-methods and adopt a command/query responsibilty segregation (CQRS: see [Martin Fowler](https://martinfowler.com/bliki/CQRS.html) and [microservice patterns](http://microservices.io/patterns/data/cqrs.html) )
+4. the network is secure  
+The system is only as secure as the weakest link, and there are lots of links in a distributed system. Use only **https**, and design _from the start_ with the [OWASP Top 10](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project) threats in mind.
+5. topology doesn't change  
+Networks change all the time, both in terms of hardware and software. Abstract the structure of the network and avoid hard-coded IP addresses, use discovery services instead of DNS if possible, and service bus frameworks can help with location transparency.
+6. there is one administrator  
+There is no one person who knows everything -- apps have data in configuration files, environment variables, databases, command line args, etc, so finding what can go where can be problematic. **Everyone** should be responsible for the release process, even if "release" means handing the materials over to deployment teams -- they still need to be able to find out what's-where, etc. Logging and monitoring should be clear, and decoupling via queues can help a great deal when taking-down/swapping-out installations.
+7. transport cost is zero  
+Everything is time and money, including the networking infrastructure **and** the cost of _serialzation/deserialization_. SOAP is more expensive than XML which is more expensive than JSON which is more expensive than binary protocols.
+8. the network is homogeneous  
+The network is rarely ever uniform in terms of configuration and protocols and hardware. Mobile devices multiply this confusion even further. Focus on standard protocols and try to avoid vendor lock-in. 
