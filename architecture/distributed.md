@@ -1,10 +1,45 @@
 # Distributed Architecture Questions
 
-## Q: ACID vs BASE?
+## Q: what is vertical vs horizontal scaling?
+
+## A:
+* vertical: add more cpu and storage to increase capacity (scaling within the unit)
+
+* horizontal: dividing the data set and distributing over multiple compute units
+
+---
+
+## Q: what is load balancing?
+
+## A: 
+In computing, load balancing improves the distribution of workloads across multiple computing resources, such as computers, a computer cluster, network links, central processing units, or disk drives. Load balancing aims to optimize resource use, maximize throughput, minimize response time, and avoid overload of any single resource. Using multiple components with load balancing instead of a single component may increase reliability and availability through redundancy. Load balancing usually involves dedicated software or hardware, such as a multilayer switch or a Domain Name System server process.
+
+---
+
+## Q: ACID vs BASE? (usually discussed in terms of databases, but...)
 ## A:
 ACID (Atomicity, Consistency, Isolation, Durability) is typically the classical immediate/strong consistency model guarantying validity as a single operation with immediate results. BASE (Bascally Available, Soft State, Eventual consistency) is more of a "liveness" guarantee (reads will _eventually_ return the same value), and does not make safety guarantees. Given no new updates, all nodes in the BASE model will return the same values and be in-sync.
 
-BASE trades low-latency at the risk of returning stale data. 
+BASE trades low-latency at the risk of returning stale data in the short term. 
+
+
+---
+## Q: what does 'consistency' mean, and why is it a concern in some systems and not others?
+## A:
+(https://www.allthingsdistributed.com/2008/12/eventually_consistent.html)
+
+Previously, things were simply synchronous and ACID, but the rise of large distributed/asynchronous systems presented new problems and have to juggle CAP (consistency, availability, partitioning, and only two can be achieved at any given time). Since network partitioning cannot be prevented or avoided, systems must deal with consistency vs availability. 
+
+* Strong consistency  
+After the update completes, any subsequent access (by A, B, or C) will return the updated value.
+* Weak consistency  
+The system does not guarantee that subsequent accesses will return the updated value. A number of conditions need to be met before the value will be returned. The period between the update and the moment when it is guaranteed that any observer will always see the updated value is dubbed the inconsistency window.
+* Eventual consistency  
+This is a specific form of weak consistency; the storage system guarantees that if no new updates are made to the object, eventually all accesses will return the last updated value. If no failures occur, the maximum size of the inconsistency window can be determined based on factors such as communication delays, the load on the system, and the number of replicas involved in the replication scheme. The most popular system that implements eventual consistency is DNS (Domain Name System). Updates to a name are distributed according to a configured pattern and in combination with time-controlled caches; eventually, all clients will see the update.
+* (eventual) Read-your-writes consistency  
+This is an important model where process A, after it has updated a data item, always accesses the updated value and will never see an older value. This is a special case of the causal consistency model.
+* (eventual) Session consistency  
+This is a practical version of the previous model, where a process accesses the storage system in the context of a session. As long as the session exists, the system guarantees read-your-writes consistency. If the session terminates because of a certain failure scenario, a new session needs to be created and the guarantees do not overlap the sessions.
 
 ---
 ## Q: What is _asychronous programming/architecture_, and why is it important?
@@ -29,24 +64,6 @@ This is important in JavaScript, because it is a very natural fit for user inter
 
 * Unfamiliar with the terms asynchronous or synchronous.
 * Unable to articulate performance implications or the relationship between asynchronous code and UI code.
-
----
-## Q: what does 'consistency' mean, and why is it a concern in some systems and not others?
-## A:
-(https://www.allthingsdistributed.com/2008/12/eventually_consistent.html)
-
-Previously, things were simply synchronous and ACID, but the rise of large distributed/asynchronous systems presented new problems and have to juggle CAP (consistency, availability, partitioning, and only two can be achieved at any given time). Since network partitioning cannot be prevented or avoided, systems must deal with consistency vs availability. 
-
-* Strong consistency  
-After the update completes, any subsequent access (by A, B, or C) will return the updated value.
-* Weak consistency  
-The system does not guarantee that subsequent accesses will return the updated value. A number of conditions need to be met before the value will be returned. The period between the update and the moment when it is guaranteed that any observer will always see the updated value is dubbed the inconsistency window.
-* Eventual consistency  
-This is a specific form of weak consistency; the storage system guarantees that if no new updates are made to the object, eventually all accesses will return the last updated value. If no failures occur, the maximum size of the inconsistency window can be determined based on factors such as communication delays, the load on the system, and the number of replicas involved in the replication scheme. The most popular system that implements eventual consistency is DNS (Domain Name System). Updates to a name are distributed according to a configured pattern and in combination with time-controlled caches; eventually, all clients will see the update.
-* (eventual) Read-your-writes consistency  
-This is an important model where process A, after it has updated a data item, always accesses the updated value and will never see an older value. This is a special case of the causal consistency model.
-* (eventual) Session consistency  
-This is a practical version of the previous model, where a process accesses the storage system in the context of a session. As long as the session exists, the system guarantees read-your-writes consistency. If the session terminates because of a certain failure scenario, a new session needs to be created and the guarantees do not overlap the sessions.
 
 ---
 
