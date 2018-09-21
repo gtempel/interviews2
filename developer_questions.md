@@ -52,3 +52,17 @@ working well with others on a shared code base
 5. think about complexity of the code -- static analysis
 6. 
 
+
+https://blog.palladiancr.com/2009/03/behavioral-interview-questions-about-organizational-skills/
+
+## Q: Tell me about a time when you managed a complicated project.
+## Q: Tell me about a time when you worked under a tight deadline.
+## Q: Tell me about a time when you had to multitask.
+## Q: Tell me about a time when your organizational skills helped you succeed.
+## Q: Tell me about a time when your planning led to positive results.
+## Q: Tell me about a time when you missed an important deadline.
+## Q: Tell me about a time when you went the extra mile to get a project done.
+## Q: Tell me about a time when you felt overwhelmed by your workload.
+## Q: Tell me about a time when you took on more than you could handle.
+## Q: Tell me about a time when you failed to delegate effectively.
+## Q: Tell me about a time when you delegated an important task successfully.

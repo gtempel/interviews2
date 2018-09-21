@@ -1,4 +1,4 @@
-# Interview Questionsto help determine style
+# Interview Questions to help determine style
 
 INTERVIEW QUESTIONS TO HELP DETERMINE STYLE
 
