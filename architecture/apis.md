@@ -1,37 +1,41 @@
 # APIs
 (https://dzone.com/articles/be-the-best-api-you-can-be)
+(https://medium.com/@rebeccahezhang/restful-api-interview-questions-d7e3eaa3d246)
+(https://www.katalon.com/resources-center/blog/web-api-testing-interview-questions/)
+(https://www.softwaretestinghelp.com/restful-web-services-interview-question/)
+
 
 ## Q: what's a URL vs resource vs collection?
 ## A:
 * a Uniform Resource Locator is the path through which a resource can be located
 * a resource is an object or representation of something, which has some associated data and maybe some methods that operate on it (student, and you can _delete_, _add_, and _update_ them)
 * a collection is a set of resources, such as students
+* URIs are combinations of some parts of the URL
 
 ---
+## Q: what architectural styles/approaches/techniques are important for creating a REST API?
+## A:
+* use of http transport
+* use of http verbs GET/PUT/POST/DELETE/PATCH
+* xml or json as data format
+* simple URI for services/resources
+* stateless communication
+  
+---
 ## Q: the HTTP methods?
-## A: 
+## A: (see below)
 1. GET requests data, produces no other data manipulations
 2. POST creates a resource; no modifications are to be performed
 3. PUT updates the resource OR creates it if it doesn't exist; must be idempotent and can be executed several times with the same results
 4. DELETE removes the resource
+5. PATCH? (see if the candidate knows this one)
+
 ---
-## Q: How would you design an API for Colleges and Students, supporting the ability to:
-1. list the colleges
-2. list the students at a college
-3. enroll a student to a college
-4. drop a student from a college
-5. remove all students from a college
-
-## A: The answer should demonstrate knowledge of identifying the resources and ignoring the actions or verbs, instead making use of the HTTP methods.
-Additionally, the answer should demonstrate the knowledge of sub-resources
-
-* method `GET` path `/colleges` should get the list of all colleges
-* method `GET` path `/colleges/26` should get the detail of college 26
-* method `DELETE` path `/colleges/26` should delete college 26
-* `GET` `/colleges/3/students` should get the list of all students from college 3
-`GET`` /colleges/3/students/45` should get the details of student 45, which belongs to college 3
-`DELETE` `/colleges/3/students/45` should delete student 45, which belongs to college 3
-`POST` `/colleges` should create a new college and return the details of the new college created
+## Q: differences between POST vs PUT vs PATCH
+## A: (see below)
+POST is not idempotent and will create new resources
+PUT is idempotent and creates/replaces a resource
+PATCH is idempotent and updates parts of a resource 
 
 ---
 ## Q: three types of routing
