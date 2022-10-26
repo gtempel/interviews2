@@ -1,5 +1,3 @@
-# Billtrust Evaluation Points
-https://docs.google.com/document/d/1vtfd9IW8-Go3HQSzddbGoPgXP2pbUqKr5gfU14GxX9w/edit
 
 
 ## An attitude where no technical challenge is too great?
@@ -10,9 +8,6 @@ https://docs.google.com/document/d/1vtfd9IW8-Go3HQSzddbGoPgXP2pbUqKr5gfU14GxX9w/
 
 ---
 
-## Strong ability to build services in C#/.net and/or node.js
-
----
 
 ## AWS (or equivalent) / CI tooling?
 
