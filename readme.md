@@ -2,6 +2,9 @@
 
 <div style="text-align: right">
 ![Interview Icon](noun-interview-4358997.png)
+<img src="./noun-interview-4358997.png" align="right"
+     alt="NounProjet icon by Riyan Resdian" width="200" height="200">
+
 </div>
 
 
