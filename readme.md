@@ -13,6 +13,7 @@ I won't bore you with an explanation of each section, as the files should seem p
 Also, I don't believe in tests in an interview. Why would you want to judge or be judged by a contrived scenario on the spot? Instead, though, I do believe in working on problems together and trying to get an idea of how the candidate approaches a problem and what questions they ask, so there's that.
 
 george (ty) tempel
+
 [http://www.linkedin.com/in/georgetempel](www.linkedin.com/in/georgetempel)
 
 ---
