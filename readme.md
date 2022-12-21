@@ -1,11 +1,7 @@
 # Interviews
 
-<div style="text-align: right">
-![Interview Icon](noun-interview-4358997.png)
 <img src="./noun-interview-4358997.png" align="right"
      alt="NounProjet icon by Riyan Resdian" width="200" height="200">
-
-</div>
 
 
 If you're here, you probably know that there *will* come a time as a developer or a manager/leader where you'll be involved the interview process. It may have happened, or is about to happen, or you're already been-there/done-that.
