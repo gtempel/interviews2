@@ -10,7 +10,7 @@
 ---
 ## Experiences
 
-- As a developer (and/or as a managher), what was your most enjoyable experience?
+- As a developer (and/or as a manager), what was your most enjoyable experience?
  
 - …and what's your "been through it and lived to tell about it" experience, as either a developer or a manager?
 
