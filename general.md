@@ -1,21 +1,6 @@
 
 
-## An attitude where no technical challenge is too great?
-
----
-
-## Design and implement REST APIs?
-
----
-
-
-## AWS (or equivalent) / CI tooling?
-
----
-
-## Ability to communicate/collaborate cross-functionally, and work will with a team-oriented environment
-
----
+# General Questions
 
 ## Self-Awareness: "Understand yourself, and the impact you have on others."
 
